@@ -166,49 +166,33 @@
 }
 
 .loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #f3f4f6;
-  border-top: 4px solid #4f46e5;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  margin: 0 auto 1rem;
-  animation: spin 1s linear infinite;
+  border-top-color: #5480f1;
+  animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .error-message {
-  background: #fee2e2;
-  color: #dc2626;
   padding: 1rem;
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.error-message button {
-  background: #dc2626;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
+  margin: 1rem 0;
+  background-color: #ffdddd;
+  border-left: 4px solid #f44336;
+  color: #333;
 }
 
 .no-results {
   text-align: center;
   padding: 2rem;
-  background: #f9fafb;
-  border-radius: 0.5rem;
-}
-
-.no-results h3 {
-  color: #374151;
-  margin-bottom: 0.5rem;
+  color: #666;
 }
 
 .programs-grid {
@@ -233,5 +217,73 @@
 
   .programs-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Custom styles for integration with Alpha template */
+
+/* Search container in banner */
+.search-container {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+/* Program card header with bookmark button */
+.program-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+/* Recent searches */
+.recent-searches {
+  margin: 1rem 0;
+}
+
+.recent-searches-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.recent-searches-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Bookmark button */
+.bookmark-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #5480f1;
+  transition: all 0.2s;
+}
+
+.bookmark-button:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 736px) {
+  .search-container {
+    padding: 0.5rem;
+    margin: 1rem auto;
+  }
+  
+  .program-card-header {
+    flex-direction: column;
+  }
+  
+  .bookmark-button {
+    align-self: flex-end;
   }
 } 
